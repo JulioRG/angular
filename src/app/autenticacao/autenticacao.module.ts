@@ -9,10 +9,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
+import { AutenticacaoRoutingModule } from './autenticacao-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -26,13 +29,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatCardModule,
     MatGridListModule,
     MatToolbarModule,
-    MatSidenavModule, 
+    MatSidenavModule,
+    MatInputModule,
+    AutenticacaoRoutingModule,
+    ReactiveFormsModule, 
   ],
   declarations: [
     LoginComponent
   ], 
   exports:[
-    LoginComponent
+    
   ]
 })
 export class AutenticacaoModule { }

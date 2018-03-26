@@ -1,13 +1,36 @@
-<ng-container >
-    <mat-toolbar class="header" color="primary">SGI</mat-toolbar>
-  
-    <div class="container">
-        <p>Serviço de Limpeza Urbana do Distrito Federal</p>
-      
-    </div>
+<ng-container>
+
+  <mat-card class="largura-card">
     
-    <mat-toolbar class="footer" color="primary">
-      <p class="texto-footer">Serviço de Limpeza Urbana do Distrito Federal</p>
-      <p class="texto-footer">SCS Quadra 08 Bloco “B50” 6º andar Edifício Venâncio 2000 - CEP: 70.333-900 Telefone: (61) 3213-0153</p>
-    </mat-toolbar>
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+
+    <form [formGroup]="loginForm" (ngSubmit)="enviarFormulario()">
+      <mat-card-content>
+
+        <mat-form-field style="width: 100%;">
+          <input type="email" matInput placeholder="E-Mail" formControlName="email" required>
+          <mat-icon matPrefix>email</mat-icon>
+          <mat-error *ngIf="email?.invalid">E-Mail inválido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%;">
+          <input type="password" matInput placeholder="Senha" formControlName="senha" required>
+          <mat-icon matPrefix>lock</mat-icon>
+          
+          <mat-error *ngIf="senha?.invalid || senha?.errors?.minlength">Senha muito curta, insira no mínimo 6 caracteres</mat-error>
+        </mat-form-field>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" style="width:100%;">
+          <mat-icon>input</mat-icon>&nbsp;Entrar
+        </button>
+      </mat-card-actions>
+    </form>
+    
+  </mat-card>
+  
 </ng-container>
