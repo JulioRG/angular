@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, EmailValidator } from '@angular/forms';
+import { AutenticacaoService } from '../services/autenticacao/autenticacao.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   senha: FormControl;
 
   constructor(
-
+    private autenticacaoService: AutenticacaoService,
   ) { }
 
   ngOnInit() {
@@ -41,5 +42,14 @@ export class LoginComponent implements OnInit {
 
   enviarFormulario(){
     console.log(this.loginForm.valid);
+    this.autenticacaoService.login(this.loginForm.value.email, this.loginForm.value.senha).subscribe(
+      data => {
+        console.log("CHeguei");
+      },
+      error => {
+        console.log("error");
+        
+      }
+    )
   }
 }

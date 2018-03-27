@@ -17,12 +17,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { RodapeComponent } from './rodape/rodape.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
-import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 
 import { PortariaComponent } from './portaria/portaria.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AutenticacaoService } from './services/autenticacao/autenticacao.service';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     RodapeComponent,
     CabecalhoComponent,
     PortariaComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule, 
@@ -42,12 +47,15 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatGridListModule,
     MatToolbarModule,
-    MatSidenavModule, 
+    MatSidenavModule,
     MatInputModule,
-    AutenticacaoModule,
+    ReactiveFormsModule, 
     AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    AutenticacaoService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

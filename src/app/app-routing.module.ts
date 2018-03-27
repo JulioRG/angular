@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PortariaComponent } from './portaria/portaria.component';
+import { LoginComponent } from './login/login.component';
 
 
 const autenticacaoRoutes: Routes = [
-  {path: '', component: PortariaComponent},
+  {path: 'login', component: LoginComponent},
 ]
 
 
