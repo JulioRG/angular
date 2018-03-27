@@ -19,8 +19,10 @@ export class AutenticacaoService {
 
   login(email: string, password: string){
     console.log('Autenticacao SERVICE');
-    return this.http.post<any>(this.api_login_url, { email: email, password: password }).map(
+     return this.http.post<any>(this.api_login_url, { email: email, password: password }).map(
       user => {
+        console.log("ACESSAR USER");
+        
         if (user && user.token) {
             localStorage.setItem("currentUser", JSON.stringify(user));
         }

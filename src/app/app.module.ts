@@ -9,23 +9,22 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
-
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { AppRoutingModule } from './app-routing.module';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { RodapeComponent } from './rodape/rodape.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
-
 import { PortariaComponent } from './portaria/portaria.component';
-import { AppRoutingModule } from './app-routing.module';
-
-import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 import { AutenticacaoService } from './services/autenticacao/autenticacao.service';
+import { AlertaService } from './services/alerta/alerta.service';
 
 
 @NgModule({
@@ -55,6 +54,7 @@ import { AutenticacaoService } from './services/autenticacao/autenticacao.servic
   ],
   providers: [
     AutenticacaoService,
+    AlertaService,
   ],
   bootstrap: [AppComponent]
 })

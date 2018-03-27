@@ -10,14 +10,14 @@
       <mat-card-content>
 
         <mat-form-field style="width: 100%;">
-          <input type="email" matInput placeholder="E-Mail" formControlName="email" required>
-          <mat-icon matPrefix>email</mat-icon>
+          <input type="email" matInput name="email" placeholder="E-Mail" formControlName="email" required>
+          <mat-icon matSuffix>email</mat-icon>
           <mat-error *ngIf="email?.invalid">E-Mail inválido</mat-error>
         </mat-form-field>
 
         <mat-form-field style="width: 100%;">
           <input type="password" matInput placeholder="Senha" formControlName="senha" required>
-          <mat-icon matPrefix>lock</mat-icon>
+          <mat-icon matSuffix>lock</mat-icon>
           
           <mat-error *ngIf="senha?.invalid || senha?.errors?.minlength">Senha muito curta, insira no mínimo 6 caracteres</mat-error>
         </mat-form-field>
