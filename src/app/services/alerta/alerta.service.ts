@@ -24,18 +24,18 @@ export class AlertaService {
 
   }
 
-  success(message: string, manterNavegacaoAposMudanca = false){
+  success(message: string, manterNavegacaoAposMudanca = false) {
     this.manterNavegacaoAposMudanca = manterNavegacaoAposMudanca;
     this.subject.next({ type: 'success', text: message });
   }
-  
-  errors(message: string, manterNavegacaoAposMudanca = false){
+
+  errors(message: string, manterNavegacaoAposMudanca = false) {
     this.manterNavegacaoAposMudanca = manterNavegacaoAposMudanca;
     this.subject.next({ type: 'errors', text: message });
   }
 
-  getMessage(): Observable<any>{
-    return this.subject.asObservable();  
+  getMessage(): Observable<any> {
+    return this.subject.asObservable();
   }
 
 }

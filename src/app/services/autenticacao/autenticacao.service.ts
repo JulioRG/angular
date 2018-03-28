@@ -13,26 +13,26 @@ const httpOptions = {
 export class AutenticacaoService {
 
   public token: string;
-  private api_login_url = "http://10.46.8.115/api/login";
+  private api_login_url = 'http://10.46.8.115/api/login';
 
   constructor(private http: HttpClient) {}
 
-  login(email: string, password: string){
+  login(email: string, password: string) {
     console.log('Autenticacao SERVICE');
      return this.http.post<any>(this.api_login_url, { email: email, password: password }).map(
       user => {
-        console.log("ACESSAR USER");
-        
+        console.log('ACESSAR USER');
+
         if (user && user.token) {
-            localStorage.setItem("currentUser", JSON.stringify(user));
+            localStorage.setItem('currentUser', JSON.stringify(user));
         }
 
         return user;
     });
-  };
+  }
 
-  logout(){
-    localStorage.removeItem("currentUser");
+  logout() {
+    localStorage.removeItem('currentUser');
   }
 
 }

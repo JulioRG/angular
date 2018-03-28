@@ -18,25 +18,23 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { RodapeComponent } from './rodape/rodape.component';
-import { CabecalhoComponent } from './cabecalho/cabecalho.component';
-import { PortariaComponent } from './portaria/portaria.component';
 import { LoginComponent } from './login/login.component';
 
 import { AutenticacaoService } from './services/autenticacao/autenticacao.service';
 import { AlertaService } from './services/alerta/alerta.service';
 
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RodapeComponent,
-    CabecalhoComponent,
-    PortariaComponent,
     LoginComponent,
+    LayoutComponent,
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatMenuModule,
@@ -48,9 +46,10 @@ import { AlertaService } from './services/alerta/alerta.service';
     MatToolbarModule,
     MatSidenavModule,
     MatInputModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     AutenticacaoService,
