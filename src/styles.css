@@ -5,36 +5,8 @@ md-icon {
   font-family: 'Material Icons' !important;
 }
 
-.container {
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  left: 0;
-  right: 0;
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.texto-footer {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 14px;
-}
-
 .largura-card {
-  margin-top: 150px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   max-width: 400px;
@@ -45,8 +17,15 @@ md-icon {
   background-size: cover;
 }
 
-.links {
+.links{
+  text-decoration: none;
+  color: white;
+}
+.links:hover {
   text-decoration: none;
   color: white;
 }
 
+.alert-dismissible .close{
+  padding: 0.60rem 1.25rem;
+}

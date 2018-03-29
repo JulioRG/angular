@@ -17,21 +17,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
+import { AlertaComponent } from './diretives/alerta/alerta.component';
+import { PortariaComponent } from './portaria/portaria.component';
 
 import { AutenticacaoService } from './services/autenticacao/autenticacao.service';
 import { AlertaService } from './services/alerta/alerta.service';
 
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { LayoutComponent } from './layout/layout.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LayoutComponent,
+    AlertaComponent,
+    PortariaComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,11 +55,13 @@ import { LayoutComponent } from './layout/layout.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatSnackBarModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     AutenticacaoService,
     AlertaService,
+    AuthGuard,
   ],
   bootstrap: [AppComponent]
 })
