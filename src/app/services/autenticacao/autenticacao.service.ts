@@ -27,7 +27,7 @@ export class AutenticacaoService {
        usuario => {
           if (usuario && usuario.data.token) {
             localStorage.setItem('currentUser', JSON.stringify(usuario.data.token));
-            this.router.navigate(['/portaria']);  
+            this.router.navigate(['/portaria/recepcao']);  
         }
         return usuario;
     });

@@ -1,5 +1,5 @@
 import { AlertaComponent } from './../diretives/alerta/alerta.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { FormControl, Validators, FormGroup} from '@angular/forms';
 import { AutenticacaoService } from '../services/autenticacao/autenticacao.service';
@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   email: FormControl;
   senha: FormControl;
+
+    
 
   constructor(
     private autenticacaoService: AutenticacaoService,
@@ -65,5 +67,5 @@ export class LoginComponent implements OnInit {
       this.alertaService.enviarAlerta(data.errors[0]);
     }
     return data;
-  }
+  } 
 }

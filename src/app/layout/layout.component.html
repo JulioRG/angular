@@ -1,5 +1,19 @@
 <mat-toolbar color="primary">SGI-Portaria
-  <div style="margin-left: auto;">
-      <a  class="links" (click)="sair()">Sair</a>
+  <div *ngIf="is_visible_menu">
+    <mat-menu #menuPortaria="matMenu">
+      <button mat-menu-item routerLink="portaria/localidade">Localidade</button>
+      <button mat-menu-item routerLink="portaria/empresa">Empresa</button>
+      <button mat-menu-item>Recepção</button>
+      <button mat-menu-item>Recepcionista</button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="menuPortaria">
+      <mat-icon>more_vert</mat-icon>
+    </button>
   </div>
+
+  <div *ngIf="is_visible_logout" style="margin-left: auto;">
+    <a class="links" (click)="sair()">Sair</a>
+  </div>
+
 </mat-toolbar>

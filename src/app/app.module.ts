@@ -23,13 +23,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AlertaComponent } from './diretives/alerta/alerta.component';
-import { PortariaComponent } from './portaria/portaria.component';
 
 import { AutenticacaoService } from './services/autenticacao/autenticacao.service';
 import { AlertaService } from './services/alerta/alerta.service';
 
 import { environment } from '../environments/environment';
 import { AuthGuard } from './guards/auth.guard';
+import { PortariaModule } from './portaria/portaria.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { AuthGuard } from './guards/auth.guard';
     LoginComponent,
     LayoutComponent,
     AlertaComponent,
-    PortariaComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -56,6 +56,7 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule,
     HttpClientModule,
     MatSnackBarModule,
+    PortariaModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
